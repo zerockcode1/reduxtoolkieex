@@ -3,6 +3,10 @@ import TodoList from "./TodoList";
 import PageList from "./PageList";
 import {useDispatch} from "react-redux";
 import {fetchPage} from "./todoSlice";
+import TodoInput from "./TodoInput";
+import TodoMsg from "./TodoMsg";
+
+
 
 const Todo = () => {
 
@@ -15,6 +19,9 @@ const Todo = () => {
     return (
         <div>
             <h1>Todo</h1>
+            <TodoMsg></TodoMsg>
+            <TodoInput></TodoInput>
+
             <button onClick={() => goReset()}>Reset</button>
             <TodoList></TodoList>
             <PageList></PageList>

@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPage} from "./todoSlice";
+import TodoItem from "./TodoItem";
 
 const TodoList = () => {
 
     const pageResult = useSelector(state => state.todo.pageResult)
+
     const page = pageResult.page
+
     const dispatch = useDispatch()
 
     useEffect((e) => {
@@ -14,7 +17,7 @@ const TodoList = () => {
 
     console.log(pageResult)
 
-    const list = pageResult.dtoList.map( todo => <li key={todo.tno}>{todo.tno} --- {todo.title}</li>)
+    const list = pageResult.dtoList.map( todo => <TodoItem key={todo.tno} todo={todo}></TodoItem>)
 
     return (
         <div>
